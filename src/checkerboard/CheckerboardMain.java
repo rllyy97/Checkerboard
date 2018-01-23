@@ -27,7 +27,7 @@ public class CheckerboardMain extends Application {
         stage.setScene(scene);
         stage.show();
         
-        controller.getDimensions();
+        controller.start();
     }
 
     /**

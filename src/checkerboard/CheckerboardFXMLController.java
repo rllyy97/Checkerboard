@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 /**
  *
@@ -23,45 +24,53 @@ public class CheckerboardFXMLController implements Initializable {
     @FXML private MenuBar menuBar;
     @FXML private Pane boardPane;
     
+    private int paneWidth;
+    private int paneHeight;
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        // nothing really
     }    
     
-    public void getDimensions() {
-        System.out.println("Width: " + boardPane.getWidth());
-        System.out.println("Height: " + boardPane.getHeight());
+    public void start() {
+        this.paneWidth = (int)boardPane.getWidth();
+        this.paneHeight = (int)boardPane.getHeight();
+        CheckerBoard checkerBoard = new CheckerBoard(8,8,this.paneWidth,this.paneHeight);
+        boardPane.getChildren().add(checkerBoard.build());
     }
     
     @FXML
     private void handleColorActionDefualt(ActionEvent event) {
-        System.out.println("DEFUALT");
+        
     }
     
     @FXML
     private void handleColorActionBlue(ActionEvent event) {
-        System.out.println("BLUE");
+
     }
     
     @FXML
     private void handleGridAction16(ActionEvent event) {
-        System.out.println("16");
+
     }
     
     @FXML
     private void handleGridAction10(ActionEvent event) {
-        System.out.println("10");
+
     }
     
     @FXML
     private void handleGridAction8(ActionEvent event) {
-        System.out.println("8");
+
     }
     
     @FXML
     private void handleGridAction3(ActionEvent event) {
-        System.out.println("3");
+
     }
     
+    private void handleResize(ActionEvent event) {
+        
+    }
 }

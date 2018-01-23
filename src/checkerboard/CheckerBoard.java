@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package checkerboard;
-
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 /**
  *
@@ -38,8 +38,19 @@ public class CheckerBoard {
     }
     
     public AnchorPane build(){
+        this.rectangleWidth = this.boardWidth/this.numCols;
+        this.rectangleHeight = this.boardHeight/this.numRows;
         AnchorPane builtAnchorPane = new AnchorPane();
-
+        int i,j;
+        for(i=0;i<numRows;i++)
+            for(j=0;j<numCols;j++){
+                Rectangle rectangle = new Rectangle(j*rectangleWidth,i*rectangleHeight,rectangleWidth,rectangleHeight);
+                if((i+j)%2 == 0)
+                    rectangle.setFill(lightColor);
+                else
+                    rectangle.setFill(darkColor);
+                builtAnchorPane.getChildren().add(rectangle);
+            }
         this.anchorPane = builtAnchorPane;
         return this.anchorPane;
     }
