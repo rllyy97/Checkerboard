@@ -43,7 +43,7 @@ public class CheckerboardFXMLController implements Initializable {
     }
     
     @FXML
-    private void handleColorActionDefualt(ActionEvent event) {
+    private void handleColorActionDefault(ActionEvent event) {
         this.checkerBoard = new CheckerBoard(this.checkerBoard.getNumRows(),this.checkerBoard.getNumCols(),this.paneWidth,this.paneHeight);
         boardPane.getChildren().clear();
         boardPane.getChildren().add(checkerBoard.build());

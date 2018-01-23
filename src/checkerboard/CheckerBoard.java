@@ -38,8 +38,16 @@ public class CheckerBoard {
     }
     
     public AnchorPane build(){
+        
+//        this.rectangleWidth = (int)this.boardWidth/this.numCols;
+//        this.rectangleHeight = (int)this.boardHeight/this.numRows;
+
         this.rectangleWidth = this.boardWidth/this.numCols;
         this.rectangleHeight = this.boardHeight/this.numRows;
+        
+//        this.rectangleWidth = (int)(this.boardWidth/this.numCols)+1;
+//        this.rectangleHeight = (int)(this.boardHeight/this.numRows)+1;
+        
         AnchorPane builtAnchorPane = new AnchorPane();
         int i,j;
         for(i=0;i<numRows;i++)
