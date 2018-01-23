@@ -28,6 +28,10 @@ public class CheckerboardMain extends Application {
         stage.show();
         
         controller.start();
+        
+        
+        
+        
     }
 
     /**
